@@ -1,5 +1,6 @@
 import requests
 
+
 def search(coord):
     Cinemas = []
     search_api_server = "https://search-maps.yandex.ru/v1/"
@@ -16,12 +17,11 @@ def search(coord):
 
     response = requests.get(search_api_server, params=search_params)
     if not response:
-        #...
+        # ...
         pass
 
     # Преобразуем ответ в json-объект
     json_response = response.json()
-
 
     # Получаем первую найденную организацию.
     organization = json_response["features"]
@@ -36,5 +36,5 @@ def search(coord):
             org_url = 'Сайта нет'
         Cinemas.append([org_name, coords, org_url])
 
-# Получаем координаты ответа.
+    # Получаем координаты ответа.
     return Cinemas
