@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
+
 def cinemastar(url):
     Films = []
     response = requests.get(url)
@@ -10,6 +11,7 @@ def cinemastar(url):
         Films.append(i.get_text())
     return Films
 
+
 def karofilm(url):
     Films = []
     response = requests.get(url)
@@ -18,6 +20,7 @@ def karofilm(url):
     for i in name:
         Films.append(i.attrs["data-search"])
     return Films
+
 
 def mirage(url):
     Films = []
@@ -29,6 +32,7 @@ def mirage(url):
         Films.append(name.get_text())
     return Films
 
+
 def kinomax(url):
     Films = []
     response = requests.get(url)
@@ -37,6 +41,7 @@ def kinomax(url):
     for i in films:
         Films.append(i.get_text())
     return Films
+
 
 def cinemapark(url):
     Films = []
