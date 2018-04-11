@@ -1,7 +1,7 @@
 import math
 
-def lonlat_distance(a, b):
 
+def lonlat_distance(a, b):
     degree_to_meters_factor = 111 * 1000
     a_lon, a_lat = [float(i) for i in a]
     b_lon, b_lat = [float(i) for i in b]
